@@ -1,0 +1,86 @@
+.main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(36, 36, 248);
+    color: white;
+    width: 300px;
+    height: 425px;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+
+    .screen-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+
+        input {
+            width: 250px;
+            height: 50px;
+        }
+    }
+
+    .button-container {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 5px;
+        padding-top: 20px;
+
+        button {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            font-size: 20px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+
+            &:nth-child(1) {
+                background-color: rgb(143, 142, 142);
+            }
+
+            &:nth-child(2) {
+                background-color: rgb(143, 142, 142);
+            }
+
+            &:nth-child(3) {
+                background-color: rgb(143, 142, 142);
+            }
+
+            &:nth-child(4) {
+                background-color: orange;
+            }
+
+            &:nth-child(8) {
+                background-color: orange;
+            }
+
+            &:nth-child(12) {
+                background-color: orange;
+            }
+
+            &:nth-child(16) {
+                background-color: orange;
+            }
+
+            &:nth-child(17) {
+                grid-column: span 2;
+                width: 105px;
+                border-radius: 16px;
+            }
+
+            &:nth-child(19) {
+                background-color: orange;
+            }
+        }
+    }
+}
