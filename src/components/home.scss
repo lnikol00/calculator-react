@@ -6,7 +6,7 @@
     background-color: rgb(36, 36, 248);
     color: white;
     width: 300px;
-    height: 425px;
+    height: 440px;
     box-shadow: 5px 0px 10px black;
 }
 
@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 2.5px;
 
     .screen-container {
         display: flex;
@@ -23,10 +23,17 @@
         align-items: center;
         padding-top: 30px;
 
-        input {
+        span {
             width: 250px;
-            height: 50px;
+            height: 70px;
             box-shadow: 5px 0px 10px black;
+            font-size: 4.5rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: black;
+            padding: 0px 10px;
+            background-color: white;
         }
     }
 
@@ -37,8 +44,8 @@
         padding-top: 20px;
 
         button {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border-radius: 16px;
             font-size: 20px;
             outline: none;
@@ -47,42 +54,79 @@
             background-color: white;
             box-shadow: 5px 0px 10px black;
 
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.775);
+            }
+
+
             &:nth-child(1) {
                 background-color: rgb(143, 142, 142);
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(2) {
                 background-color: rgb(143, 142, 142);
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(3) {
                 background-color: rgb(143, 142, 142);
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(4) {
                 background-color: orange;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(8) {
                 background-color: orange;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(12) {
                 background-color: orange;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(16) {
                 background-color: orange;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
 
             &:nth-child(17) {
                 grid-column: span 2;
-                width: 105px;
+                width: 115px;
                 border-radius: 16px;
             }
 
             &:nth-child(19) {
                 background-color: orange;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.775);
+                }
             }
         }
     }
