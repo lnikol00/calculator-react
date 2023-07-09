@@ -1,4 +1,4 @@
-import { useState } from "react"
+import useCont from "../hooks/useCont";
 import "./home.scss"
 
 type Props = {
@@ -6,13 +6,13 @@ type Props = {
 }
 
 function Home() {
-
+    const { calc } = useCont();
 
     return (
         <div className="main-container">
             <div className="calculator-container">
                 <div className="screen-container">
-                    <span>0</span>
+                    <span>{calc?.num ? calc?.num : calc?.res}</span>
                 </div>
 
                 <div className="button-container">
@@ -42,3 +42,4 @@ function Home() {
 }
 
 export default Home
+
