@@ -1,6 +1,13 @@
+import { useState } from "react"
 import "./home.scss"
 
+type Props = {
+    value: string;
+}
+
 function Home() {
+
+
     return (
         <div className="main-container">
             <div className="calculator-container">
