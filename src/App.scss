@@ -8,10 +8,145 @@
 }
 
 .app-container {
-  background-image: url("./components/img/image1.jpg");
+  background-image: url("./img/image1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   background-size: 100% 100%;
   position: relative;
+}
+
+.main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(36, 36, 248);
+  color: white;
+  width: 300px;
+  height: 440px;
+  box-shadow: 5px 0px 10px black;
+  border-radius: 16px;
+}
+
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5px;
+
+  .screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+
+    span {
+      width: 250px;
+      height: 70px;
+      box-shadow: 5px 0px 10px black;
+      font-size: 4.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: black;
+      padding: 0px 10px;
+      background-color: white;
+    }
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 5px;
+    padding-top: 20px;
+
+    button {
+      width: 55px;
+      height: 55px;
+      border-radius: 8px;
+      font-size: 20px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background-color: white;
+      box-shadow: 5px 0px 10px black;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.775);
+      }
+
+
+      &:nth-child(1) {
+        background-color: rgb(143, 142, 142);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(2) {
+        background-color: rgb(143, 142, 142);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: rgb(143, 142, 142);
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: orange;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(8) {
+        background-color: orange;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(12) {
+        background-color: orange;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(16) {
+        background-color: orange;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+
+      &:nth-child(17) {
+        grid-column: span 2;
+        width: 115px;
+        border-radius: 8px;
+      }
+
+      &:nth-child(19) {
+        background-color: orange;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.775);
+        }
+      }
+    }
+  }
 }
