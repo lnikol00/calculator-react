@@ -18,7 +18,9 @@ function Button({ value }: Props) {
             'x': signClick,
             '-': signClick,
             '+': signClick,
-            '=': equalsClick
+            '=': equalsClick,
+            '%': percentClick,
+            '+/-': invertClick
         }
 
         if (results[value]) {
@@ -48,8 +50,7 @@ function Button({ value }: Props) {
     const commaClick = () => {
         setCalc({
             ...calc,
-            // num: !calc.num?.toString().includes('.') ? calc.num + value : calc.num
-            num: 29
+            num: !calc.num?.toString().includes('.') ? Number(calc.num) + Number(value) : Number(calc.num)
         })
     }
     const resetClick = () => {
@@ -66,22 +67,39 @@ function Button({ value }: Props) {
 
     const equalsClick = () => {
 
-        // const math = (a: number, b: number, sign: string) => {
-        //     const result = {
-        //         '+': (a: number, b: number) => a + b,
-        //         '-': (a: number, b: number) => a - b,
-        //         'x': (a: number, b: number) => a * b,
-        //         '/': (a: number, b: number) => a / b
-        //     }
+        if (calc.res && calc.num) {
+            const math = (a: number, b: number, sign: string) => {
+                const result: any = {
+                    '+': (a: number, b: number) => a + b,
+                    '-': (a: number, b: number) => a - b,
+                    'x': (a: number, b: number) => a * b,
+                    '/': (a: number, b: number) => a / b
+                }
 
-        //     result 
-        // }
+                return result[sign](a, b);
+            }
 
+            setCalc({
+                res: math(Number(calc.res), Number(calc.num), String(calc.sign)),
+                sign: '',
+                num: 0
+            })
+        }
+    }
 
+    const percentClick = () => {
         setCalc({
-            // res: math(calc.res, calc.num, calc.sign),
-            sign: '',
-            num: 0
+            num: (Number(calc.num) / 100),
+            res: (Number(calc.num) / 100),
+            sign: ''
+        })
+    }
+
+    const invertClick = () => {
+        setCalc({
+            num: calc.num ? calc.num * -1 : 0,
+            res: calc.res ? calc.res * -1 : 0,
+            sign: ''
         })
     }
 

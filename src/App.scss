@@ -42,8 +42,9 @@
     align-items: center;
     padding-top: 30px;
 
-    span {
+    .screen {
       width: 250px;
+      max-width: 250px;
       height: 70px;
       box-shadow: 5px 0px 10px black;
       font-size: 4.5rem;
