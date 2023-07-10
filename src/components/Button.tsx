@@ -1,10 +1,8 @@
 import React from 'react'
 import useCont from '../hooks/useCont'
-import { click } from '@testing-library/user-event/dist/click'
 
 type Props = {
-    click?: (value: string | number) => void
-    value?: string | number
+    value: string | number
 }
 
 function Button({ value }: Props) {
@@ -13,19 +11,77 @@ function Button({ value }: Props) {
 
     const handleBtnClick = () => {
 
-        // const results: Props = {
-        //     click: commaClick
-        // }
+        const results: any = {
+            '.': commaClick,
+            'C': resetClick,
+            '/': signClick,
+            'x': signClick,
+            '-': signClick,
+            '+': signClick,
+            '=': equalsClick
+        }
 
-        // const value = '.'
+        if (results[value]) {
+            return results[value]()
+        } else {
+            return handleClickNumber()
+        }
 
-        // return results[value]()
+    }
+
+    const handleClickNumber = () => {
+        const numberString = value.toString()
+
+        let numberValue;
+        if (numberString === '0' && calc.num === 0) {
+            numberValue = '0'
+        } else {
+            numberValue = Number(calc.num + numberString)
+        }
+
+        setCalc({
+            ...calc,
+            num: numberValue
+        })
     }
 
     const commaClick = () => {
         setCalc({
             ...calc,
+            // num: !calc.num?.toString().includes('.') ? calc.num + value : calc.num
             num: 29
+        })
+    }
+    const resetClick = () => {
+        setCalc({ sign: '', num: 0, res: 0 })
+    }
+
+    const signClick = () => {
+        setCalc({
+            sign: value,
+            res: !calc.res && calc.num ? calc.num : calc.res,
+            num: 0
+        })
+    }
+
+    const equalsClick = () => {
+
+        // const math = (a: number, b: number, sign: string) => {
+        //     const result = {
+        //         '+': (a: number, b: number) => a + b,
+        //         '-': (a: number, b: number) => a - b,
+        //         'x': (a: number, b: number) => a * b,
+        //         '/': (a: number, b: number) => a / b
+        //     }
+
+        //     result 
+        // }
+
+
+        setCalc({
+            // res: math(calc.res, calc.num, calc.sign),
+            sign: '',
+            num: 0
         })
     }
 
