@@ -11,6 +11,7 @@ export type ContextType = {
         num?: number
         res?: number
     }
+    setCalc: React.Dispatch<any>
 }
 
 export const CalcContext = createContext<ContextType | null>(null)
