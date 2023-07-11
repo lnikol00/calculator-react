@@ -50,7 +50,7 @@ function Button({ value }: Props) {
     const commaClick = () => {
         setCalc({
             ...calc,
-            num: !calc.num?.toString().includes('.') ? Number(calc.num) + Number(value) : Number(calc.num)
+            num: !calc.num?.toString().includes('.') ? Number(calc.num) + String(value) : Number(calc.num)
         })
     }
     const resetClick = () => {
